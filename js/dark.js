@@ -6,12 +6,15 @@ const theme = {
         theme.body = document.querySelector("body");
         theme.header = document.querySelector("header");
         theme.btn = document.querySelector(".bi");
+        theme.main = document.querySelector("main");
+
         theme.switchButton.addEventListener("click", theme.handleClickDark);
     },
 
     handleClickDark: function () {
         theme.body.classList.toggle("theme-dark");
         theme.header.classList.toggle("dark-font");
+        theme.main.classList.toggle("dark-font");
 
         if (theme.btn.classList.contains("bi-moon-fill")) {
             theme.btn.classList.remove("bi-moon-fill");
