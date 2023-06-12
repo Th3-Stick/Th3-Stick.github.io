@@ -4,17 +4,15 @@ const theme = {
 
         theme.switchButton = document.querySelector("#theme-switch");
         theme.body = document.querySelector("body");
-        theme.header = document.querySelector("header");
         theme.btn = document.querySelector(".bi");
-        theme.main = document.querySelector("main");
+        theme.left = document.querySelector(".leftContainer");
+        theme.right = document.querySelector(".rightContainer");
 
         theme.switchButton.addEventListener("click", theme.handleClickDark);
     },
 
     handleClickDark: function () {
         theme.body.classList.toggle("theme-dark");
-        theme.header.classList.toggle("dark-font");
-        theme.main.classList.toggle("dark-font");
 
         if (theme.btn.classList.contains("bi-moon-fill")) {
             theme.btn.classList.remove("bi-moon-fill");
@@ -22,6 +20,14 @@ const theme = {
         } else if (theme.btn.classList.contains("bi-sun-fill")) {
             theme.btn.classList.remove("bi-sun-fill");
             theme.btn.classList.add("bi-moon-fill");
+        }
+
+        if (theme.left.classList.contains("dark-bloc")) {
+            theme.left.classList.remove("dark-bloc");
+            theme.right.classList.remove("dark-bloc");
+        } else {
+            theme.left.classList.add("dark-bloc");
+            theme.right.classList.add("dark-bloc");
         }
     },
 }
